@@ -1,0 +1,16 @@
+
+Public auction sites in Brasilia
+
+sites_dict = {'brasilia_leiloes': 'https://www.brasilialeiloes.com.br',
+              'capital_leiloes': 'https://www.capitalleiloes.com.br',
+              'df_leiloes': 'https://www.dfleiloes.com.br',
+              'flex_leiloes': 'https://www.flexleiloes.com.br',
+              'jussiara_leiloes': 'https://www.jussiaraleiloes.com',
+              'leiloeiros_de_brasilia': 'https://www.leiloeirosdebrasilia.com.br',
+              'luiz_leiloes': 'https://www.luizleiloes.com.br',
+              'maria_vitorino_leiloeira': 'https://www.mariavitorinoleiloeira.com.br',
+              'moacira': 'https://www.moacira.lel.br',
+              'mult_leiloes': 'https://multleiloes.vlance.com.br', ####problemas com javascrip!!
+              'parque_dos_leiloes': 'https://www.parquedosleiloes.com.br',
+              'paulo_tolentino': 'https://www.paulotolentino.com.br',
+}
