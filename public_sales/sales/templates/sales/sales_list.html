@@ -1,0 +1,54 @@
+{% extends "sales/base.html" %}
+{% block content %}
+<h1>This is the home page</h1>
+
+<div class="container-fluid">
+    <!--Grid row-->
+    <div class="row">
+        {% for auction in liked_auctions %}
+        <!--Grid column-->
+        <div class="col-sm-3 my-5">
+            <!--Card-->
+            <div class="card">
+                <!--Card image-->
+                <div class="view overlay">
+                    <img src="{{ auction.image.url }}" class="card-img-top" alt="" width="300" height="180">
+                    <a href="#">
+                        <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                    </a>
+                </div>
+                <!--Card content-->
+                <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title">{{ auction.name }}</h4>
+                    <!--Text-->
+                    <p class="card-text">Data: {{ auction.date_auction }}</p>
+                    <p class="card-text">Lance Mínimo: R$ {{ auction.price }}</p>
+                    <p class="card-text">{{ auction.status }}</p>
+                </div>
+                <div class="card-footer">
+                    <div class="container">
+                        <a href="{{ auction.url_origin }}" class="btn-sm float-left">Ver Leiloeiro</a>
+                        {% if user.is_authenticated %}
+                        <form action="{% url 'liked' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" , name="immobile_id" value="{{ auction.id }}">
+                            <input type="hidden" , name="user_list" value="user_list">
+                            {% if user not in auction.liked.all %}
+                            <button class="btn btn-primary btn-sm float-right" type="submit">Seguir</button>
+                            {% else %}
+                            <button class="btn btn-secondary btn-sm float-right" type="submit">Seguindo</button>
+                            {% endif %}
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <!--/.Card-->
+        </div>
+        <!--Grid column-->
+        {% endfor %}
+    </div>
+    <!--Grid row-->
+</div>
+{% endblock %}
