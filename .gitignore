@@ -7,4 +7,4 @@
 /.vscode
 /.ipynb_checkpoints
 /.env
-/public_sales/.env
+/public_sales/public_sales/.env
